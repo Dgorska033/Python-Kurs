@@ -10,5 +10,3 @@ Repozytorium zawiera moje zadania oraz projekty wykonywane podczas kursu Python.
 ## Autor
 
 Dominika
-
-s
