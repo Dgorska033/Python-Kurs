@@ -12,7 +12,6 @@ import json
 
 with open("konfiguracja.json", "r", encoding="utf-8") as plik: # r - do odczytu 
                       
-    dane = json.load(plik)       #indent=4 dodaje wcięcia, dzięki czemu plik jest czytelny
-                                # ensure_ascii=False zapisuje polskie znaki (ą, ć, ę...) zamiast kodów Unicode
+    dane = json.load(plik)       
     print(f"Witaj, {dane["uzytkownik"]}! Twój motyw to {dane["motyw"]}.")
 
