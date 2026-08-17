@@ -33,33 +33,16 @@ def znajdz_sale_studenta(nazwisko):
         WHERE s.nazwisko = ?     
     ''', (nazwisko,)) 
 
-    # c.execute('''
-    #     SELECT a.nazwa_budynku, a.numer_sali
-    #     FROM Studenci AS s              
-    # 
-    # # 
-    # -- Biorę ID studenta ze Studenci
-    # -- i szukam tego samego ID w przypisania.
-    # # JOIN mówi, którą tabelę chcę dołączyć.
+   
+# JOIN = którą tabelę dołączam
+# ON = po jakich kolumnach łączę rekordy
+# AS = krótki alias tabeli
 
-# JOIN = którą tabelę dołączam?
-# ON   = po czym poznaję, które rekordy do siebie pasują?
-# AS   = nadaję tabeli krótszą nazwę, np. Studenci AS s      
+# Studenci -> przypisania
+# Łączę po id_studenta
 
-    #     JOIN przypisania AS p
-    #         ON s.id_studenta = p.id_studenta
-
-    # -- Z przypisania mam już ID audytorium,
-    # -- więc szukam sali z takim samym ID w Audytoria.
-
-
-    #     JOIN Audytoria AS a
-    #         ON p.id_audytorium = a.id_audytorium 
-
-    # -- Z tego wszystkiego interesuje mnie tylko student
-    # -- o nazwisku, które podałam do funkcji.
-    #     WHERE s.nazwisko = ?     
-    # ''', (nazwisko,)) 
+# przypisania -> Audytoria
+# Łączę po id_audytorium
 
     wynik = c.fetchone()
     conn.close()
