@@ -1,0 +1,14 @@
+Własnymi słowami: Wyjaśnij, jaka jest różnica między Klientem a Serwerem w
+architekturze Klient-Serwer. Podaj po jednym przykładzie każdego z nich.
+
+Klient to program inicjujący i wysyłający żądania do serwera, a Serwer jest programem oczekującym na te żądania i odpowiadającym na nie. 
+Klient i Serwer opisują przede wszystkim rodzaje programów, a nie komputerów, w przypadku backendu nie mylić z serwerem stacjonarnym. 
+
+
+Przykład: 
+
+Logowanie do poczty:
+
+Wpisujesz login i hasło, a Klient (aplikacja) wysyła je do sieci.
+Serwer odbiera dane, sprawdza w bazie, czy hasło jest poprawne.
+Jeśli tak, Serwer zezwala na dostęp i odsyła listę Twoich wiadomości.

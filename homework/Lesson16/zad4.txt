@@ -1,0 +1,16 @@
+Pytanie teoretyczne: Kiedy otwierasz stronę google.com w przeglądarce, jaką
+metodę HTTP najprawdopodobniej wysyła Twoja przeglądarka, aby wyświetlić stronę
+główną?
+
+Otwierająć stronę główną przeglądarka  używa: 
+
+- GET > aby odczytać/ pobrać dane 
+
+
+GET pobiera zasób z serwera. W tym przypadku zasobem jest strona główna serwisu.
+
+Przykładowe żądanie:
+
+GET / HTTP/1.1
+Host: google.com
+

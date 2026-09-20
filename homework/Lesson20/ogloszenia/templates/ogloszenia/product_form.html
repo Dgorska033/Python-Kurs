@@ -1,0 +1,26 @@
+{% extends "ogloszenia/base.html" %}
+
+
+{% block title %}
+Dodaj produkt
+{% endblock %}
+
+
+{% block content %}
+
+<h2>Dodaj nowy produkt</h2>
+
+<form method="POST">
+
+    <!-- Token bezpieczeństwa wymagany przez Django dla formularzy POST -->
+    {% csrf_token %}
+
+    <!-- Automatyczne wyświetlenie pól formularza ProductForm -->
+    {{ form.as_p }}
+
+    <!-- Przycisk wysyłający formularz -->
+    <button type="submit">Dodaj produkt</button>
+
+</form>
+
+{% endblock %}

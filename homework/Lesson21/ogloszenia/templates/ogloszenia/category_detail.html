@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Szczegóły kategorii</title>
+</head>
+
+<body>
+
+    <!-- Nazwa wybranej kategorii -->
+    <h1>{{ category.name }}</h1>
+
+    <h2>Artykuły należące do tej kategorii:</h2>
+
+    <ul>
+        {% for article in category.article_set.all %}
+
+            <li>{{ article.title }}</li>
+
+        {% empty %}
+
+            <li>Brak artykułów w tej kategorii.</li>
+
+        {% endfor %}
+    </ul>
+
+</body>
+
+</html>

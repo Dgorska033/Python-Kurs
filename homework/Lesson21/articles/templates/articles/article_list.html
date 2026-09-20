@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista artykułów</title>
+</head>
+
+<body>
+
+    <h1>Wszystkie artykuły</h1>
+
+    <!-- Formularz wyszukiwania artykułów -->
+<form method="GET">
+
+    <input
+        type="text"
+        name="q"
+        placeholder="Szukaj artykułu..."
+        value="{{ query|default:'' }}"
+    >
+
+    <button type="submit">
+        Szukaj
+    </button>
+
+</form>
+
+    {% if articles %}
+
+        <ul>
+
+            {% for article in articles %}
+
+                <li>
+                    <h2>
+                        {{ article.title }}
+
+                        {% if article.pub_date >= three_days_ago %}
+                        <span>NOWOŚĆ!</span>
+                        {% endif %}
+                    </h2>
+
+                    <p>
+                        Opublikowano:
+                        {{ article.pub_date|date:"d.m.Y" }}
+                    </p>
+                </li>
+
+            {% endfor %}
+
+        </ul>
+
+    {% else %}
+
+        <p>Brak artykułów do wyświetlenia.</p>
+
+    {% endif %}
+
+</body>
+
+</html>
