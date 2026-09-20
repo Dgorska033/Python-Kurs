@@ -1,0 +1,22 @@
+Pytanie teoretyczne: Do której warstwy modelu TCP/IP należy protokół IP,
+odpowiedzialny za znalezienie drogi do komputera docelowego?
+
+
+
+IP > warstwa Internet
+
+IP mówi, dokąd mają trafić dane. Każdy komputer ma swój adres IP, a routery patrzą na ten adres
+i przekazują dane dalej, aż dotrą do odpowiedniego urządzenia.
+
+
+
+HTTP > aplikacja
+TCP  > transport
+IP   > internet
+
+
+
+APLIKACJA       > HTTP, HTTPS, DNS
+TRANSPORT       > TCP, UDP
+INTERNET        > IP
+DOSTĘP DO SIECI > Ethernet, Wi-Fi

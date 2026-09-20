@@ -1,0 +1,29 @@
+{% extends "ogloszenia/base.html" %}
+
+
+{% block title %}
+Produkty z kategorii
+{% endblock %}
+
+
+{% block content %}
+
+<h2>Produkty z wybranej kategorii</h2>
+
+<ul>
+    {% for product in products %}
+
+        <li>
+            {{ product.name }} - {{ product.price }} zł
+            <br>
+            {{ product.description }}
+        </li>
+
+    {% empty %}
+
+        <li>Brak produktów w tej kategorii.</li>
+
+    {% endfor %}
+</ul>
+
+{% endblock %}

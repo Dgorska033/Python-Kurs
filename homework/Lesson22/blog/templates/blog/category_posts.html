@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ category.name }}</title>
+</head>
+
+<body>
+
+    <h1>Kategoria: {{ category.name }}</h1>
+
+    <h2>Posty:</h2>
+
+    <ul>
+        {% for post in posts %}
+
+            <li>{{ post.title }}</li>
+
+        {% empty %}
+
+            <li>Brak postów w tej kategorii.</li>
+
+        {% endfor %}
+    </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Notatki</title>
+</head>
+
+<body>
+
+    <h1>Lista notatek</h1>
+
+    <ul>
+        {% for note in page_obj %}
+            <li>
+                <a href="/note/{{ note.id }}/">
+                    {{ note.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Paginacja -->
+    <div>
+
+        <!-- Link do poprzedniej strony -->
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">
+                Poprzednia
+            </a>
+        {% endif %}
+
+
+        <!-- Informacja o aktualnej stronie -->
+        <span>
+            Strona {{ page_obj.number }} z {{ page_obj.paginator.num_pages }}
+        </span>
+
+
+        <!-- Link do następnej strony -->
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">
+                Następna
+            </a>
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

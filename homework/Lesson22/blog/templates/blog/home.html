@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+
+<body>
+
+    <h1>Najnowsze posty</h1>
+
+    <!-- Formularz wyszukiwarki -->
+<form method="GET" action="{% url 'search_posts' %}">
+    <input
+        type="text"
+        name="q"
+        placeholder="Wpisz szukaną frazę"
+    >
+
+    <button type="submit">Szukaj</button>
+</form>
+
+    <ul>
+        {% for post in posts %}
+
+            <li>
+                <strong>{{ post.title }}</strong>
+                <br>
+                {{ post.publication_date }}
+            </li>
+
+        {% empty %}
+
+            <li>Brak postów.</li>
+
+        {% endfor %}
+    </ul>
+
+</body>
+
+{% if user.is_authenticated %}
+
+    <p>
+        Zalogowana jako: <strong>{{ user.username }}</strong>
+    </p>
+
+{% else %}
+
+    <p>Nie jesteś zalogowana.</p>
+
+{% endif %}
+
+</html>

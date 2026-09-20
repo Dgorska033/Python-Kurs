@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Blok tytułu - inne szablony mogą go nadpisać -->
+    <title>
+        {% block title %}
+        Moja strona
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Moja strona Django</h1>
+    </header>
+
+    <main>
+        <!-- Miejsce na treść konkretnej strony -->
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+
+</html>
